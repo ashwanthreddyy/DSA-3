@@ -1,0 +1,29 @@
+PASS  T1 identical: score                      expected=16             actual=16
+PASS  T1 identical: aligned region             expected=ACGTACGT       actual=ACGTACGT
+PASS  T2 no similarity: score                  expected=0              actual=0
+PASS  T2 no similarity: empty result           expected=true           actual=true
+PASS  T3 partial overlap: score                expected=10             actual=10
+PASS  T3 partial overlap: region               expected=ACGGT          actual=ACGGT
+PASS  T3 partial overlap: pos in A             expected=3-7            actual=3-7
+PASS  T3 partial overlap: pos in B             expected=3-7            actual=3-7
+PASS  T4 gap: score (8 matches - 1 gap)        expected=14             actual=14
+PASS  T4 gap: number of gaps                   expected=1              actual=1
+PASS  T4 gap: A without gaps                   expected=ACGTTTGCA      actual=ACGTTTGCA
+PASS  T4 gap: B without gaps                   expected=ACGTTGCA       actual=ACGTTGCA
+PASS  T5 textbook: score                       expected=13             actual=13
+PASS  T5 textbook: aligned A                   expected=GTT-AC         actual=GTT-AC
+PASS  T5 textbook: aligned B                   expected=GTTGAC         actual=GTTGAC
+PASS  T6 gap=-10: score                        expected=9              actual=9
+PASS  T6 gap=-10: region                       expected=GTT            actual=GTT
+PASS  T7 protein: score                        expected=12             actual=12
+PASS  T7 protein: pos in A                     expected=3-8            actual=3-8
+PASS  T7 protein: pos in B                     expected=1-6            actual=1-6
+PASS  T8 symmetry of local score               expected=29             actual=29
+PASS  T9 clean FASTA/lowercase/spaces          expected=ACGT           actual=ACGT
+PASS  T9 invalid DNA char rejected             expected=true           actual=true
+PASS  T9 empty input rejected                  expected=true           actual=true
+PASS  T9 invalid scoring rejected (match=0)    expected=true           actual=true
+PASS  T10 KMP occurrences                      expected=[0, 4]         actual=[0, 4]
+PASS  T10 Needleman-Wunsch identical           expected=8              actual=8
+
+27 passed, 0 failed
